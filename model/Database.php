@@ -1,15 +1,15 @@
 <?php
 class Database {
-  private $dbuser;
-  private $dbpass;
-  private $dbname;
-  private $server;
+  private $db_user;
+  private $db_pass;
+  private $db_name;
+  private $db_server;
 
   function __construct() {
-    $this->server = $_SERVER['SERVER_NAME'];
-    $this->dbuser = "memberadmin";
-    $this->dbpass = "qwerty";
-    $this->dbname = "membership";
+    $this->db_server = "localhost";
+    $this->db_user = "memberadmin";
+    $this->db_pass = "qwerty";
+    $this->db_name = "membership";
   }
 
   private function connect() {
