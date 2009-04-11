@@ -19,6 +19,16 @@ class Member {
     return true;
   }
 
+  function delMember() {
+    if (!$this->validMemberData()) {
+      return false;
+    }
+    $sql = "DELETE FROM members WHERE " .
+           "firstname = '{$this->firstname}'";
+    $this->db->sql_run($sql);
+    return true;
+  }
+
   function validMemberData() {
     if (!isset($this->firstname) || trim($this->firstname) == "") {
       return false;
